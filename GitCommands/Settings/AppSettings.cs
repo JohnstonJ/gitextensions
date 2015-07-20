@@ -1058,6 +1058,12 @@ namespace GitCommands
             set { SetInt("RecursiveSubmodules", value); }
         }
 
+        public static bool ShowNestedSubmodules
+        {
+            get { return GetBool("ShowNestedSubmodules", true); }
+            set { SetBool("ShowNestedSubmodules", value); }
+        }
+
         public static string ShorteningRecentRepoPathStrategy
         {
             get { return GetString("ShorteningRecentRepoPathStrategy", ""); }

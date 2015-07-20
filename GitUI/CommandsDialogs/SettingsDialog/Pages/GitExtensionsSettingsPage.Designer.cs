@@ -63,6 +63,7 @@
 			this.panelSpacer1 = new System.Windows.Forms.Panel();
 			this.panelSpacer2 = new System.Windows.Forms.Panel();
 			this.chkShowDiffForAllParents = new System.Windows.Forms.CheckBox();
+			this.chkShowNestedSubmodules = new System.Windows.Forms.CheckBox();
 			this.groupBoxBehaviour.SuspendLayout();
 			this.tableLayoutPanelBehaviour.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.RevisionGridQuickSearchTimeout)).BeginInit();
@@ -288,18 +289,20 @@
 			this.tableLayoutPanelPerformance.ColumnCount = 2;
 			this.tableLayoutPanelPerformance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
 			this.tableLayoutPanelPerformance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-			this.tableLayoutPanelPerformance.Controls.Add(this.chkCheckForUncommittedChangesInCheckoutBranch, 0, 4);
+			this.tableLayoutPanelPerformance.Controls.Add(this.chkCheckForUncommittedChangesInCheckoutBranch, 0, 5);
 			this.tableLayoutPanelPerformance.Controls.Add(this.chkShowGitStatusInToolbar, 0, 0);
 			this.tableLayoutPanelPerformance.Controls.Add(this.chkShowStashCountInBrowseWindow, 0, 3);
 			this.tableLayoutPanelPerformance.Controls.Add(this.chkUseFastChecks, 0, 2);
 			this.tableLayoutPanelPerformance.Controls.Add(this.chkShowCurrentChangesInRevisionGraph, 0, 1);
-			this.tableLayoutPanelPerformance.Controls.Add(this.label12, 0, 6);
-			this.tableLayoutPanelPerformance.Controls.Add(this.chkShowDiffForAllParents, 0, 5);
-			this.tableLayoutPanelPerformance.Controls.Add(this._NO_TRANSLATE_MaxCommits, 1, 6);
+			this.tableLayoutPanelPerformance.Controls.Add(this.label12, 0, 7);
+			this.tableLayoutPanelPerformance.Controls.Add(this.chkShowDiffForAllParents, 0, 6);
+			this.tableLayoutPanelPerformance.Controls.Add(this._NO_TRANSLATE_MaxCommits, 1, 7);
+			this.tableLayoutPanelPerformance.Controls.Add(this.chkShowNestedSubmodules, 0, 4);
 			this.tableLayoutPanelPerformance.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tableLayoutPanelPerformance.Location = new System.Drawing.Point(3, 19);
 			this.tableLayoutPanelPerformance.Name = "tableLayoutPanelPerformance";
-			this.tableLayoutPanelPerformance.RowCount = 7;
+			this.tableLayoutPanelPerformance.RowCount = 8;
+			this.tableLayoutPanelPerformance.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanelPerformance.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanelPerformance.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanelPerformance.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -325,7 +328,7 @@
             0});
 			this._NO_TRANSLATE_MaxCommits.Name = "_NO_TRANSLATE_MaxCommits";
 			this._NO_TRANSLATE_MaxCommits.Size = new System.Drawing.Size(123, 23);
-			this._NO_TRANSLATE_MaxCommits.TabIndex = 7;
+			this._NO_TRANSLATE_MaxCommits.TabIndex = 9;
 			this._NO_TRANSLATE_MaxCommits.Value = new decimal(new int[] {
             1000,
             0,
@@ -339,7 +342,7 @@
 			this.label12.Location = new System.Drawing.Point(3, 152);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(296, 15);
-			this.label12.TabIndex = 6;
+			this.label12.TabIndex = 8;
 			this.label12.Text = "Limit number of commits that will be loaded at startup";
 			// 
 			// chkCheckForUncommittedChangesInCheckoutBranch
@@ -348,7 +351,7 @@
 			this.chkCheckForUncommittedChangesInCheckoutBranch.Location = new System.Drawing.Point(3, 103);
 			this.chkCheckForUncommittedChangesInCheckoutBranch.Name = "chkCheckForUncommittedChangesInCheckoutBranch";
 			this.chkCheckForUncommittedChangesInCheckoutBranch.Size = new System.Drawing.Size(341, 19);
-			this.chkCheckForUncommittedChangesInCheckoutBranch.TabIndex = 5;
+			this.chkCheckForUncommittedChangesInCheckoutBranch.TabIndex = 6;
 			this.chkCheckForUncommittedChangesInCheckoutBranch.Text = "Check for uncommitted changes in checkout branch dialog";
 			this.chkCheckForUncommittedChangesInCheckoutBranch.UseVisualStyleBackColor = true;
 			// 
@@ -514,9 +517,19 @@
 			this.chkShowDiffForAllParents.Location = new System.Drawing.Point(3, 128);
 			this.chkShowDiffForAllParents.Name = "chkShowDiffForAllParents";
 			this.chkShowDiffForAllParents.Size = new System.Drawing.Size(303, 19);
-			this.chkShowDiffForAllParents.TabIndex = 8;
+			this.chkShowDiffForAllParents.TabIndex = 7;
 			this.chkShowDiffForAllParents.Text = "Show file differences for all parents in browse dialog.";
 			this.chkShowDiffForAllParents.UseVisualStyleBackColor = true;
+			//
+			// chkShowNestedSubmodules
+			// 
+			this.chkShowNestedSubmodules.AutoSize = true;
+			this.chkShowNestedSubmodules.Location = new System.Drawing.Point(3, 103);
+			this.chkShowNestedSubmodules.Name = "chkShowNestedSubmodules";
+			this.chkShowNestedSubmodules.Size = new System.Drawing.Size(301, 19);
+			this.chkShowNestedSubmodules.TabIndex = 5;
+			this.chkShowNestedSubmodules.Text = "Show nested submodules in browse window toolbar";
+			this.chkShowNestedSubmodules.UseVisualStyleBackColor = true;
 			// 
 			// GitExtensionsSettingsPage
 			// 
@@ -588,5 +601,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSmtpServer;
         private System.Windows.Forms.CheckBox chkFollowRenamesInFileHistoryExact;
 		private System.Windows.Forms.CheckBox chkShowDiffForAllParents;
+		private System.Windows.Forms.CheckBox chkShowNestedSubmodules;
 	}
 }

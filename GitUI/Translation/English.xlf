@@ -6584,6 +6584,10 @@ global settings.
         <source>Show repository status in browse dialog (number of changes in toolbar, restart required)</source>
         <target />
       </trans-unit>
+      <trans-unit id="chkShowNestedSubmodules.Text">
+        <source>Show nested submodules in browse window toolbar</source>
+        <target />
+      </trans-unit>
       <trans-unit id="chkShowStashCountInBrowseWindow.Text">
         <source>Show stash count on status bar in browse window</source>
         <target />
