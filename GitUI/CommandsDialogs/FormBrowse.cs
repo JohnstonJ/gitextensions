@@ -3185,7 +3185,7 @@ namespace GitUI.CommandsDialogs
                 SubmoduleInfoResult result = new SubmoduleInfoResult();
 
                 // Add all submodules inside the current repository:
-                foreach (var submodule in threadModule.GetSubmodulesLocalPaths().OrderBy(submoduleName => submoduleName))
+                foreach (var submodule in threadModule.GetSubmodulesLocalPaths(AppSettings.ShowNestedSubmodules).OrderBy(submoduleName => submoduleName))
                 {
                     cancelToken.ThrowIfCancellationRequested();
                     var name = submodule;
@@ -3200,7 +3200,8 @@ namespace GitUI.CommandsDialogs
 
                 if (threadModule.SuperprojectModule != null)
                 {
-                    GitModule supersuperproject = threadModule.FindTopProjectModule();
+                    // Only show top-level project when nested submodules are also shown
+                    GitModule supersuperproject = AppSettings.ShowNestedSubmodules ? threadModule.FindTopProjectModule() : threadModule.SuperprojectModule;
                     if (threadModule.SuperprojectModule.WorkingDir != supersuperproject.WorkingDir)
                     {
                         var name = Path.GetFileName(Path.GetDirectoryName(supersuperproject.WorkingDir));
@@ -3233,7 +3234,7 @@ namespace GitUI.CommandsDialogs
                         GetSubmoduleStatusAsync(result.Superproject, cancelToken);
                     }
 
-                    var submodules = supersuperproject.GetSubmodulesLocalPaths().OrderBy(submoduleName => submoduleName);
+                    var submodules = supersuperproject.GetSubmodulesLocalPaths(AppSettings.ShowNestedSubmodules).OrderBy(submoduleName => submoduleName);
                     if (submodules.Any())
                     {
                         string localpath = threadModule.WorkingDir.Substring(supersuperproject.WorkingDir.Length);
